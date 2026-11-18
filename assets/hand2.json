@@ -1,0 +1,13 @@
+{
+ "tip": [
+  -0.19999999999998863,
+  229.7
+ ],
+ "cut_x": 533.0,
+ "axis": [
+  0.999839746457806,
+  -0.017901994391414454
+ ],
+ "src_frame": 1,
+ "note": "crop px; pencil points from tip along -axis; cut_x = reference frame right border"
+}
