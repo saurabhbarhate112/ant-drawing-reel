@@ -635,7 +635,7 @@ HAND = json.load(open(ASSET('hand2.json')))
 HAND_IMG = {}
 PIG_HAND = dict(g='graphite', o='orange', y='yellow', b='brown', k='black', w='white')
 HSU = 1.5                     # hand units per source px = the reference reel's own scale
-BASE_PHI = dict(simple=math.radians(4), normal=math.radians(24), better=math.radians(10), real=math.radians(26))
+BASE_PHI = dict(simple=math.radians(4), normal=math.radians(6), better=math.radians(9), real=math.radians(8))
 
 
 def hand_img(pig):
@@ -722,7 +722,7 @@ class Session:
         ax_ = self.anchor[i]
         reach = min(max((ax_[0] - 380) / 520, 0), 1)
         reach = reach * reach * (3 - 2 * reach)
-        phi0 = BASE_PHI[ant] * 0.4 + math.radians(4 + (36 if ax_[1] < 950 else 44) * reach)
+        phi0 = BASE_PHI[ant] + math.radians(10 * reach)
         ax = np.array([math.cos(phi0), math.sin(phi0)])            # tip -> hand direction
         lat = ax[0] * d[1] - ax[1] * d[0]
         along = np.dot(ax, d)
